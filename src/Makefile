@@ -20,7 +20,6 @@ libsclean:
 	$(MAKE) -C include clean
 
 %.ihx: %.c
-	echo $@ $^
 	$(CC) $(CCFLAGS) $^
 
 %.com: %.ihx
