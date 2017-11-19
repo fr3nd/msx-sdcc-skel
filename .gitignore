@@ -15,13 +15,13 @@ src/include/mem.rel
 src/include/mem.sym
 src/include/putchar.rel
 src/include/vdp.rel
-src/main.asm
-src/main.lk
-src/main.lst
-src/main.map
-src/main.noi
-src/main.rel
-src/main.sym
+src/*.asm
+src/*.lk
+src/*.lst
+src/*.map
+src/*.noi
+src/*.rel
+src/*.sym
 utils/Hex2bin-1.0.12/hex2bin
 utils/Hex2bin-1.0.12/mot2bin
 
