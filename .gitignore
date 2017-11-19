@@ -25,4 +25,5 @@ src/main.sym
 utils/Hex2bin-1.0.12/hex2bin
 utils/Hex2bin-1.0.12/mot2bin
 
+*.com
 src/bin
