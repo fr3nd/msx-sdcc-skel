@@ -26,6 +26,7 @@ libsclean:
 
 clean: libsclean
 	rm -f *.com *.rel *.asm *.lst *.sym *.bin *.ihx *.lk *.map *.noi
+	rm -rf bin/
 
 test:
 	openmsx -machine Boosted_MSXturboR_with_IDE -ext msxdos2 -diska ../emulation/msx-dos/ -script ../emulation/boot.tcl -diskb bin/
