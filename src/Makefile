@@ -6,7 +6,12 @@ IHX_FILES := $(subst .c,.ihx,$(C_FILES))
 COM_FILES := $(subst .ihx,.com,$(IHX_FILES))
 AS = sdasz80
 CC = sdcc
-CCFLAGS = --code-loc 0x0178 --data-loc 0 --disable-warning 196 -mz80 --no-std-crt0 -Iinclude include/crt0msx_msxdos_advanced.rel include/putchar.rel include/getchar.rel
+INCLUDEDIR = include
+
+# Uncomment the CCFLAGS variable depending on your needs
+#CCFLAGS = --code-loc 0x0178 --data-loc 0 --disable-warning 196 -mz80 --no-std-crt0 -I$(INCLUDEDIR) include/crt0msx_msxdos_advanced.rel include/putchar.rel include/getchar.rel include/dos2.rel
+#CCFLAGS = --code-loc 0x0107 --data-loc 0 --disable-warning 196 -mz80 --no-std-crt0 -I$(INCLUDEDIR) include/crt0msx_msxdos.rel include/putchar.rel include/getchar.rel include/dos2.rel
+CCFLAGS := --code-loc 0x0107 --data-loc 0 --disable-warning 196 -mz80 --no-std-crt0 -I$(INCLUDEDIR) include/crt0msx_msxdos.rel include/putchar.rel
 
 all: hex2bin libs $(COM_FILES)
 
