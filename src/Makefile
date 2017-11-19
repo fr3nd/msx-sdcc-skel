@@ -1,4 +1,5 @@
-HEX2BIN = ../utils/Hex2bin-1.0.12/hex2bin
+HEX2BINDIR = ../utils/Hex2bin-1.0.12
+HEX2BIN = $(HEX2BINDIR)/hex2bin
 .PHONY: clean libs libsclean
 C_FILES := $(wildcard *.c)
 IHX_FILES := $(subst .c,.ihx,$(C_FILES))
@@ -7,7 +8,10 @@ AS = sdasz80
 CC = sdcc
 CCFLAGS = --code-loc 0x0178 --data-loc 0 --disable-warning 196 -mz80 --no-std-crt0 -Iinclude include/crt0msx_msxdos_advanced.rel include/putchar.rel include/getchar.rel
 
-all: libs $(COM_FILES)
+all: hex2bin libs $(COM_FILES)
+
+hex2bin:
+	$(MAKE) -C $(HEX2BINDIR)
 
 libs:
 	$(MAKE) -C include
