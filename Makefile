@@ -1,4 +1,4 @@
-all: hex2bin
+all:
 	$(MAKE) -C src
 
 clean:
