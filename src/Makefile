@@ -26,7 +26,7 @@ libsclean:
 %.com: %.ihx
 	mkdir -p bin
 	$(HEX2BIN) -e com $^
-	mv $@ bin/
+	cp $@ bin/
 
 clean: libsclean
 	rm -f *.com *.rel *.asm *.lst *.sym *.bin *.ihx *.lk *.map *.noi
